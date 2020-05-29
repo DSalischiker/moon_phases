@@ -1,0 +1,24 @@
+{
+  "name": "moon_phases",
+  "version": "1.0.0",
+  "description": "LAP III",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dieguito711/moon_phases.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dieguito711/moon_phases/issues"
+  },
+  "homepage": "https://github.com/dieguito711/moon_phases#readme",
+  "dependencies": {
+    "request": "^2.88.2",
+    "start": "^5.1.0"
+  }
+}
