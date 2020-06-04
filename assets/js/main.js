@@ -23,7 +23,7 @@ request(options, function (error, response, body) {
 
 const fetchData = async () => {
     try {
-        const response = await fetch("https://sunmooncalc.p.rapidapi.com/moon-illumination?time=21-30&date=2020-05-28", {
+        const response = await fetch("https://sunmooncalc.p.rapidapi.com/moon-illumination?time=21-30&date=2020-06-04", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "sunmooncalc.p.rapidapi.com",
@@ -32,13 +32,47 @@ const fetchData = async () => {
         })
 
         console.log(response);
-
+        const data = await response.json();
+        console.log(data);
+        getPhase(data.phase);
+        return data;
     } catch (error) {
         console.log(error);
     }
 }
 
-fetchData();
+
+const data = fetchData();
+let moonPhase = '';
+
+const getPhase = (phase) => {
+    let $divNew = document.querySelector('#new');
+    let $divFq = document.querySelector('#first_quarter');
+    let $divSq = document.querySelector('#second_quarter');
+    let $divFull = document.querySelector('#full');
+    switch (true) {
+        case phase >= 0 && phase < 0.17:
+            moonPhase = 'New';
+            $divNew.classList.add('current-phase');
+            break;
+        case phase >= 0.17 && phase < 0.45:
+            moonPhase = 'WaxGib';
+            $divFq.classList.add('current-phase');
+            break;
+        case phase >= 0.45 && phase < 0.55:
+            moonPhase = 'Full';
+            $divFull.classList.add('current-phase');
+            break;
+        case phase >= 0.55:
+            moonPhase = 'WanCre';
+            $divSq.classList.add('current-phase');
+        default:
+            break;
+    }
+
+    console.log(moonPhase);
+
+}
 
 
 /*
