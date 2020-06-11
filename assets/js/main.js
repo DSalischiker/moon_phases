@@ -51,21 +51,25 @@ const getPhase = (phase) => {
     let $divSq = document.querySelector('#second_quarter');
     let $divFull = document.querySelector('#full');
     switch (true) {
-        case phase >= 0 && phase < 0.17:
+        case phase >= 0 && phase < 0.10:
             moonPhase = 'New';
             $divNew.classList.add('current-phase');
+            //LIGHT NEW MOON LED
             break;
-        case phase >= 0.17 && phase < 0.45:
+        case phase >= 0.10 && phase < 0.45:
             moonPhase = 'WaxGib';
             $divFq.classList.add('current-phase');
+            //LIGHT WAXING MOON LED
             break;
         case phase >= 0.45 && phase < 0.55:
             moonPhase = 'Full';
             $divFull.classList.add('current-phase');
+            //LIGHT FULL MOON LED
             break;
         case phase >= 0.55:
             moonPhase = 'WanCre';
             $divSq.classList.add('current-phase');
+            //LIGHT WANING MOON LED
         default:
             break;
     }
