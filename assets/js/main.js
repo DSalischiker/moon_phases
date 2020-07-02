@@ -23,7 +23,7 @@ request(options, function (error, response, body) {
 
 const fetchData = async () => {
     try {
-        const response = await fetch("https://sunmooncalc.p.rapidapi.com/moon-illumination?time=21-30&date=2020-06-04", {
+        const response = await fetch("https://sunmooncalc.p.rapidapi.com/moon-illumination?time=21-30&date=2020-07-02", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "sunmooncalc.p.rapidapi.com",
